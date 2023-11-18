@@ -1,15 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const authRouter = require("./routes/auth");
-
+require("dotenv").config();
 const app = express();
 
 app.use(express.json());
 app.use(authRouter);
-const DB =
-  "mongodb+srv://unekwenchekwube:Nchekwube1@cluster0.b90bwxh.mongodb.net/?retryWrites=true&w=majority";
+console.log({
+  db: process.env.DB,
+});
 mongoose
-  .connect(DB)
+  .connect(process.env.DB)
   .then((dbRes) => {
     console.log("connection successful 🔥 ");
     // console.log({
