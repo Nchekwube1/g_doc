@@ -30,7 +30,8 @@ authRouter.post("/api/signup", async (req, res) => {
         },
       });
     } else {
-      res.status(403).json({
+      // res.status(403).json({
+      res.status(200).json({
         message: "User already exists!!",
         data: {
           email: user?.email ?? "",

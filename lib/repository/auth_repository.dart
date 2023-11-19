@@ -38,9 +38,6 @@ class AuthRepository {
             headers: {
               "Content-Type": "application/json; charset=UTF-8",
             });
-        print('http response-------');
-        print(res.body);
-        print(res.statusCode);
         switch (res.statusCode) {
           case 200:
             var user = jsonDecode(res.body)['data'];
@@ -64,8 +61,6 @@ class AuthRepository {
         }
       }
     } catch (e) {
-      print('---error---');
-      print(e.toString());
       error = ErrorModel(error: e.toString(), data: null);
     }
 

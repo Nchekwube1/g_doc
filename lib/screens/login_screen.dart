@@ -16,7 +16,6 @@ class LoginScreen extends ConsumerWidget {
       navigator
           .push(MaterialPageRoute(builder: (context) => const HomeScreen()));
     } else {
-      print(responseData.error);
       sMessenger.showSnackBar(
         SnackBar(
           content: Text(responseData.error!),
